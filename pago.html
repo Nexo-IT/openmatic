@@ -23,6 +23,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/scripts.js"></script>
     <title>OpenMatic</title>
@@ -67,7 +68,7 @@
                 <a class="nav-link mx-3" href="#">OFERTAS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-3">PUNTOS DE VENTAS</a>
+                <a class="nav-link mx-3">UBICACIONES</a>
               </li>
               <li class="nav-item mx-1">
                 <a
@@ -83,9 +84,7 @@
     </section>
 
     <section id="pago" class="container my-5">
-      <div
-        class="row border border-1 inter-regular text-black p-2 font14 mb-5 d-flex justify-content-between"
-      >
+      <div class="row border border-1 inter-regular text-black p-2 font14 mb-5 d-flex justify-content-between">
         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
           <div class="text-start">
             <a href="home.html">Perfumes &#187;</a>
@@ -102,10 +101,9 @@
       <div class="row">
         <!-- column 1 -->
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3 inter-regular">
-          <h5 class="text-black inter-semibold">Verifica tus artículos</h5>
+          <h5 class="text-black inter-semibold">Tus datos</h5>
           <p class="font14 text-black">
-            Para una mejor experiencia, verifique su artículo y elija su envío
-            antes de realizar el pedido.
+            Ingresa tus datos para que podamos enviar tu recibo de compra de manera segura.
           </p>
           <form class="row g-3 mb-3">
             <div class="col-auto font14 text-black">
@@ -117,25 +115,92 @@
                 placeholder="Nombre"
               />
             </div>
-            <div class="col-auto">
-              <label for="inputApellido" class="visually-hidden"
-                >Apellido</label
-              >
+
+            <div class="col-auto font14 text-black">
+              <label for="inputApellido" class="visually-hidden">Apellido</label>
               <input
-                type="password"
+                type="text"
                 class="form-control"
                 id="inputApellido"
                 placeholder="Apellido"
               />
             </div>
-            <div class="col-auto"></div>
+
+            <div class="col-auto font14 text-black">
+              <label for="inputEmail" class="visually-hidden">Rut</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail"
+                placeholder="Rut"
+              />
+            </div>
+
+            <div class="col-12 font14 text-black">
+              <label for="inputEmail" class="visually-hidden">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail"
+                placeholder="Email"
+              />
+            </div>
+            
+            
           </form>
         
 
           <div class="col-12 mb-3">
             <div class="border-1 border rounded-3 p-2 inter-regular text-black">
+              <h5 class="text-black inter-semibold">Verifica tus artículos</h5>
+              <p class="font14 text-black">
+                Para una mejor experiencia, verifique su artículo y elija su envío
+                antes de realizar el pedido.
+              </p>
               <p class="font14"><i class="bi bi-map"></i> Lugar de retiro</p>
               <p class="inter-regular font14 color-gris">Manuel Montt 3030, Providencia, Santiago</p>
+              <p></p>
+              <button  type="button" class="btn verde text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                ver mapa
+              </button>
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Ubicación de retiro </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+
+                        <label>Región
+                      <input class="form-control" type="text" placeholder="R. Metropolitana" input" aria-label="Disabled input " disabled>
+                    </label>
+                      </div>
+                      
+                      <div class="mb-3">
+                        <label>Comuna</label>
+                        <input class="form-control" type="text" placeholder="Providencia" input" aria-label="Disabled input " disabled>
+                      </div>
+
+                      <div class="mb-3">
+                        <p> <i class="bi bi-geo-alt-fill"></i> Manuel Montt 3030, Providencia, Santiago</p>
+                      </div>
+
+                      <div class="MB-3 text-center">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d36949.81958564493!2d-70.65401874359155!3d-33.4382206262342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1718287255226!5m2!1ses-419!2scl" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      </div>
+                   
+                      
+                    </label>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -198,7 +263,8 @@
                   <div class="row">
                     <div class="col">
                       <div class="d-flex align-items-center font14">
-                        <button id="incrementBtn" class="mx-2">+</button>
+                        <button id="decrementBtn" class="ms-2">-</button>
+                        
                         <input
                           type="text"
                           id="quantityInput"
@@ -206,7 +272,7 @@
                           value="0"
                           readonly
                         />
-                        <button id="decrementBtn" class="ms-2">-</button>
+                        <button id="incrementBtn" class="mx-2">+</button>
                       </div>
                     </div>
                   </div>
@@ -236,7 +302,7 @@
                   <div class="row">
                     <div class="col">
                       <div class="d-flex align-items-center font14">
-                        <button id="incrementBtn" class="mx-2">+</button>
+                        <button id="decrementBtn" class="ms-2">-</button>
                         <input
                           type="text"
                           id="quantityInput"
@@ -244,7 +310,8 @@
                           value="0"
                           readonly
                         />
-                        <button id="decrementBtn" class="ms-2">-</button>
+                        <button id="incrementBtn" class="mx-2">+</button>
+                        
                       </div>
                     </div>
                   </div>
@@ -288,6 +355,7 @@
 
       </div>
     </section>
+    
     <script>
       // Obtener referencias a los elementos del DOM
       const incrementBtn = document.getElementById("incrementBtn");

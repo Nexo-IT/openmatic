@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Ubicación</title>
+    <script
+    src="https://kit.fontawesome.com/d48ab4ae16.js"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/scripts.js"></script>
+    <!-- script src="https://maps.googleapis.com/maps/api/js?AIzaSyCnazEJZHbBZkJ49cfB41hT-qe_ic4EvlY"></script> -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/scripts.js"></script>
+    <title>OpenMatic</title>
+
+    <style>
+   
+        #map {
+            height: 100%;
+            width: 50%;
+        }
+        
+        .map-container {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./index.html"><img src="assets/imgs/logo.png" alt="" width="427" height="68" class="d-inline-block align-text-top"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav montserrat-semibold fs-6 ">
+                  <li class="nav-item">
+                    <a class="nav-link active mx-3" aria-current="page" href="./index.html">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-3" href="#">CATEGORIAS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-3" href="#">OFERTAS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-3">PUNTOS DE VENTAS</a>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <a href="login.html" style="background-color: #8DC200;" class="nav-link btn rounded-pill px-3 text-white px-1"><i class="fa-solid fa-arrow-right"></i> IDENTIFICARTE</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </section>
+    <section class="container">
+        <div class="row border border-1 inter-regular text-black p-2 font14 mb-5 d-flex justify-content-between">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+              <div class="text-start">
+                <a href="home.html">Perfumes &#187;</a>
+                <a href="todosProductos.html">Silk &#187;</a> Mujer
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+              <div class="text-end">
+                <i class="bi bi-geo-alt-fill"></i> Santiago, Providencia, Manuel
+                Montt 3030
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d36949.81958564493!2d-70.65401874359155!3d-33.4382206262342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1718287255226!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-3">
+                <p>Mi Ubicación en el Mapa</p>
+                <div class="map-container" id="map">
+                    <select id="comunas" name="comunas" class="form-select">
+                        <option value="cerrillos">Cerrillos</option>
+                        <option value="cerro-navia">Cerro Navia</option>
+                        <option value="conchalí">Conchalí</option>
+                        <option value="el-bosque">El Bosque</option>
+                        <option value="estación-central">Estación Central</option>
+                        <option value="huechuraba">Huechuraba</option>
+                        <option value="independencia">Independencia</option>
+                        <option value="la-cisterna">La Cisterna</option>
+                        <option value="la-florida">La Florida</option>
+                        <option value="la-granja">La Granja</option>
+                        <option value="la-pintana">La Pintana</option>
+                        <option value="la-reina">La Reina</option>
+                        <option value="las-condes">Las Condes</option>
+                        <option value="lo-barnechea">Lo Barnechea</option>
+                        <option value="lo-espejo">Lo Espejo</option>
+                        <option value="lo-prado">Lo Prado</option>
+                        <option value="macul">Macul</option>
+                        <option value="maipú">Maipú</option>
+                        <option value="ñuñoa">Ñuñoa</option>
+                        <option value="padre-hurtado">Padre Hurtado</option>
+                        <option value="paine">Paine</option>
+                        <option value="pedro-aguirre-cerda">Pedro Aguirre Cerda</option>
+                        <option value="peñalolén">Peñalolén</option>
+                        <option value="providencia">Providencia</option>
+                        <option value="pudahuel">Pudahuel</option>
+                        <option value="quilicura">Quilicura</option>
+                        <option value="quinta-normal">Quinta Normal</option>
+                        <option value="recoleta">Recoleta</option>
+                        <option value="renca">Renca</option>
+                        <option value="san-bernardo">San Bernardo</option>
+                        <option value="san-joaquin">San Joaquín</option>
+                        <option value="san-miguel">San Miguel</option>
+                        <option value="san-ramón">San Ramón</option>
+                        <option value="santiago">Santiago</option>
+                        <option value="vitacura">Vitacura</option>
+                    </select>
+                
+                    
+                </div>
+            </div>
+            <div class="col-3">
+                <p>Seleccione punto de retiro</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1" type="radio" name="seleccionMaquina" value="" aria-label="...">
+                          Manuel Montt 3030
+                        </li>
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1" type="radio" name="seleccionMaquina" value="" aria-label="...">
+                          Los Leones 444
+                        </li>
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1" type="radio" name="seleccionMaquina" value="" aria-label="...">
+                          Guadia Vieja 124
+                        </li>                    
+                      </ul>
+                      <p>&nbsp;</p>
+                      <form action="todosProductos.html">
+                        <button class="btn verde rounded px-5 py-2 text-white" type="submit"><i class="bi bi-geo-alt-fill"></i> Ir a tienda</button>
+                    </form>
+            </div>
+          </div>
+    </section>
+    
+    
+
+    
+    <section id="footer" class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4">
+                <img class="img-fluid" src="assets/imgs/logo.png" alt="Openmatic">
+                <p class="text-black montserrat-regular">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+            </div>
+            <div class="col">
+                <p class="fw-bold text-black montserrat-ultrabold">Nosotros</p>
+                <ul class="montserrat-regular text-black" style="list-style-type: none; padding-left: 0; font-size: small;">
+                    <li><a href="quienes_somos.html">Quienes somos</a></li>
+                    <li><a href="politicasPrivacidad.html">Politicas de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <p class="fw-bold text-black montserrat-ultrabold">Información</p>
+                <ul class="montserrat-regular text-black " style="list-style-type: none; padding-left: 0; font-size: small;">
+                    <li>
+                        Help Center
+                    </li>
+                    <li>
+                        Método de pago
+                    </li>
+                    <li>
+                        Soporte técnico
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <p class="fw-bold text-black montserrat-ultrabold">Contacto</p>
+                <ul class="montserrat-regular text-black" style="list-style-type: none; padding-left: 0; font-size: small;">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                          </svg> 800 600800
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                          </svg> contacto@openmatic.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        // Inicializar el mapa
+        function initMap() {
+            var mapOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // obtener la ubicación del usuario
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    map.setCenter(pos);
+
+                    // ubicación del usuario
+                    var marker = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        title: 'Estás aquí'
+                    });
+                }, function() {
+                    handleLocationError(true, map.getCenter());
+                });
+            } else {
+                // El navegador no soporta geolocalización
+                handleLocationError(false, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, pos) {
+            var infoWindow = new google.maps.InfoWindow({map: map});
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: El servicio de geolocalización falló.' :
+                'Error: Tu navegador no soporta geolocalización.');
+        }
+
+        // Ejecutar la función para inicializar el mapa
+        window.onload = initMap;
+    </script>
+</body>
+</html>
